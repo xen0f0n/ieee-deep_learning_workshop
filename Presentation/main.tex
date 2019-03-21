@@ -1,0 +1,195 @@
+%!TEX program = xelatex
+\documentclass[10pt, compress]{beamer}
+\usepackage{array}
+\usepackage{listings} % for code snippets
+\usepackage{enumitem}
+\usepackage{xltxtra}
+\usepackage{xgreek}
+\usepackage{multicol}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+\usepackage{subfig}
+\renewcommand{\thesubfigure}{\roman{subfigure}}
+
+% matlab
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\setbeamercolor{background canvas}{bg=white}
+
+% -------
+
+\usefonttheme{serif} % this made greek work
+\setmainfont[Mapping=tex-text]{Liberation Serif}
+\usetheme{metropolis}
+
+
+\begin{document}
+
+\begin{frame}
+\thispagestyle{empty}
+
+\begin{flushleft}
+% \begin{figure}
+%   \includegraphics[width=.6\linewidth, left]{imgs/square-official-800}
+% \end{figure}
+\end{flushleft}
+\Large{\textbf{Deep Learning Workshop}} \\
+% \vspace*{-.05cm}
+
+% \fontsize{10pt}{Εργαστήριο 1 \\ Εισαγωγή στα Σήματα \& Συστήματα με Matlab}
+% {\fontsize{12}{40} \selectfont ``A.I. is the new electricity"} \\
+% {\fontsize{9}{40} \selectfont \qquad \qquad \qquad \qquad \qquad -Andrew NG} \\
+\begin{multicols}{2}
+{\fontsize{10}{40} \selectfont ``...what we want is a machine} \\
+\vspace*{-.3cm}
+{\fontsize{10}{40} \selectfont that can learn from experience."} \\
+\vspace*{-.3cm}
+{\fontsize{8}{40} \selectfont  \qquad \qquad \qquad \qquad Alan Turing, 1947} \\
+% \hrulefill \\
+
+\columnbreak
+\vspace*{-1.4cm}
+
+\begin{figure}
+  \includegraphics[width=.4\linewidth, right]{imgs/square-official-800}
+\end{figure}
+\end{multicols}
+\vspace{-1.1cm}
+\hrulefill \\
+{\fontsize{10}{40} \selectfont Xenofon Karagiannis} \\
+
+% \vspace*{.5cm}
+% \begin{figure}
+%   \includegraphics[width=.6\linewidth]{imgs/logo-fixed-1}
+% \end{figure}
+\end{frame}
+
+\setcounter{framenumber}{0}
+
+\begin{frame}
+  AI vs ML vs DL vs Data Science \\
+  aaaaall hype buzzwords \\
+
+  AI - ANI and AGI (terminator/skynet)
+\end{frame}
+
+\begin{frame}
+  ``AI is the new electricity". ~Andrew NG \\
+
+  papers and articles!!! \\
+
+  Μερικές εφαρμογές \\
+  coursera: google cat,  \\
+  edX: , speech reenactment, automatic handwriting gen \\
+  other:  medical-images, smart-crops, sefl-driving cars \\
+
+  TensorFlow: an ML platform for solving impactful and challenging problems [\href{https://www.youtube.com/watch?v=NlpS-DhayQA}{link}] \\
+  \textbf{Color Restoration} \\
+  Let there be Color! [\href{http://iizuka.cs.tsukuba.ac.jp/projects/colorization/extra.html}{link}] \\
+  Let there be Color! [\href{https://github.com/satoshiiizuka/siggraph2016_colorization}{github}]
+\end{frame}
+
+\begin{frame}
+AI failes!\\
+\#alexafails \\
+cat is dog \\
+paypal - got scammed - great
+
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+  \includegraphics[width=1\linewidth]{imgs/nn_timeline}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace*{1cm}
+  \textbf{Neuron:} The basic computational unit of the brain  \\
+  \textbf{Walter Pitts and Warren McCulloch [1943]:}\\
+  thresholded logic unit (designed to mimic the way a neuron was thought to work) \\
+  adjustable but not learned weights \\
+  \vspace*{-.5cm}
+  \begin{eqnarray}
+  \mbox{output} & = & \left\{ \begin{array}{ll}
+  0 & \mbox{if } \sum_j w_j x_j \leq \mbox{ threshold} \\
+  1 & \mbox{if } \sum_j w_j x_j > \mbox{ threshold}
+  \end{array} \right.
+  \nonumber
+  \end{eqnarray}
+  \hrulefill \\
+  \begin{figure}[ht]
+  	\centering
+  	\subfloat[Βιολογικός νευρώνας]{%
+  		\label{fig:first}%
+  		\includegraphics[width=0.5\linewidth]{imgs/neuron}}%
+  	\qquad
+  	\subfloat[Μαθηματικό μοντέλο - τεχνητός νευρώνας]{%
+  		\label{fig:second}%
+  		\includegraphics[width=0.4\linewidth]{imgs/artificial_neuron}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\textbf{Frank Rosenblatt’s “perceptron” [1958]:} \\real precursor to modern neural networks \\
+weights \textbf{learning rule}
+Rosenblatt was so confident that the perceptron would lead to true AI, that in 1959 he remarked: \\
+\textit{[The perceptron is] the embryo of an electronic computer that [the Navy] expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.}
+
+Learning rule \\
+Decision boundaries \\
+Python script - draw/update boundaries while learning!!! \\
+AND, NOT, etc logical gates
+
+\end{frame}
+
+\begin{frame}
+  1 neuron demo - gates, function approximation (y = 2x), house prices, etc \\
+(gradient descent)
+\end{frame}
+
+
+\begin{frame}
+
+\vspace*{.5cm}
+Marvin Minsky and Seymor Papert XOR problem
+Along with the double-PhD wielding Seymor Papert, Minksy wrote a book entitled Perceptrons that effectively killed the perceptron, ending embryonic idea of a neural net. They showed that the perceptron was incapable of learning the simple exclusive-or (XOR) function. Worse, they proved that it was theoretically impossible for it to learn such a function, no matter how long you let it train. Now this isn’t surprising to us, as the model implied by the perceptron is a linear one and the XOR function is nonlinear, but at the time this was enough to kill all research on neural nets \\
+
+python demo - XOR problem (boundaries cant converge) \\
+Linear model!!! meaning a straight line or a linear hyperplane
+
+
+The First AI Winter (1969): brace yourselves - winter is coming
+
+\end{frame}
+
+\begin{frame}
+Multi-Layer Perceptron (MLP) \\
+Sigmoid activation function \\
+
+All powered by BackProp [1986]!!! \\
+Back Propagation 231n Stanford
+\end{frame}
+
+\begin{frame}
+machine learning is all about a computer learning the patterns that distinguish things \\
+map x to y example (y = x-1)
+\end{frame}
+
+\begin{frame}
+  Laurence Moroney \\
+traditional programming vs ML (rules + data = ans VS ans + data = rules) \\
+the computer will figure out the rules \\
++ examples slides
+\end{frame}
+
+\begin{frame}
+timeline (pic from thesis) - artificial neuron, perceptron, XOR problem, AI winter, back prop, MLP, AlexNet
+\end{frame}
+
+\end{document}
