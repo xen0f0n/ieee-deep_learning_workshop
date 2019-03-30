@@ -112,8 +112,8 @@ paypal - got scammed - great
   \vspace*{1cm}
   \textbf{Neuron:} The basic computational unit of the brain  \\
   \textbf{Walter Pitts and Warren McCulloch [1943]:}\\
-  thresholded logic unit (designed to mimic the way a neuron was thought to work) \\
-  adjustable but not learned weights \\
+  \textbf{Thresholded logic unit} (designed to mimic the way a neuron was thought to work) \\
+  adjustable but \textit{not learned} weights \\
   \vspace*{-.5cm}
   \begin{eqnarray}
   \mbox{output} & = & \left\{ \begin{array}{ll}
@@ -136,19 +136,167 @@ paypal - got scammed - great
 \end{frame}
 
 \begin{frame}
-\textbf{Frank Rosenblatt’s “perceptron” [1958]:} \\real precursor to modern neural networks \\
-weights \textbf{learning rule}
-Rosenblatt was so confident that the perceptron would lead to true AI, that in 1959 he remarked: \\
-\textit{[The perceptron is] the embryo of an electronic computer that [the Navy] expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.}
+  \vspace*{1cm}
+  \textbf{Thresholded logic unit}
+  % \begin{multicols}{2}
+    \begin{eqnarray}
+    \mbox{output} & = & \left\{ \begin{array}{ll}
+    0 & \mbox{if } \sum_j w_j x_j \leq \mbox{ threshold} \\
+    1 & \mbox{if } \sum_j w_j x_j > \mbox{ threshold}
+    \end{array} \right.
+    \nonumber
+    \end{eqnarray}
 
-Learning rule \\
-Decision boundaries \\
-Python script - draw/update boundaries while learning!!! \\
-AND, NOT, etc logical gates
+    % \columnbreak
 
+    \begin{figure}
+      \includegraphics[width=.7\linewidth]{imgs/step.pdf}
+    \end{figure}
+  % \end{multicols}
 \end{frame}
 
 \begin{frame}
+  \textbf{Frank Rosenblatt’s “perceptron” [1957]:} \\First real precursor to modern neural networks \\
+  Developed \textbf{rule for learning weights}
+
+  \vspace{-.5cm}
+  \begin{figure}
+    \includegraphics[width=.8\linewidth]{imgs/perceptron_1}
+  \end{figure}
+  \vspace{-.5cm}
+  \textbf{Decision Boundary:} $w_{1,1}p_1 + w_{1,2}p_2 + b = 0$ \\
+  \textbf{Linear equation:} $ax + by + c = 0$
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Supervised Learning} \\
+  Network is provided with a set of examples of proper network behavior (inputs/targets)
+  $$\{p_1, t_1\}, \{p_2, t_2\}, ..., \{p_Q, t_Q\}$$
+
+  \textbf{Example - OR gate} \\ \hfill \break
+  \vspace{-.6cm}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_or}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Example - OR gate}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_or_2}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Learning Rule Test Problem}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_1}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Starting Point}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_2}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Tentative Learning Rule}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_3}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Second Input Vector}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_4}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Third Input Vector}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_5}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \textbf{Unified Learning Rule}
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_6}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}
+% % $p_2 = -\frac{b}{w_{1,2}}$, if $p_1 = 0$ \qquad
+% % $p_1 = -\frac{b}{w_{1,1}}$, if $p_2 = 0$
+% \textbf{Perceptron's Learning Rule} \\ \hfill \break
+% \centering
+% If $t = 1$ and $\alpha = 0$, then $w^{new} = w^{old} + p$ \\
+% If $t = 0$ and $\alpha = 1$, then $w^{new} = w^{old} - p$ \\
+% If $t = \alpha$, then $w^{new} = w^{old}$ \\
+%
+% $$e = t - \alpha$$
+% If $e = 1$, then $w^{new} = w^{old} + p$ \\
+% If $e = -1$, then $w^{new} = w^{old} - p$ \\
+% If $e = 0$, then $w^{new} = w^{old}$ \\ \hfill \break
+%
+% $w^{new} = w^{old} + ep = w^{old} + (t-\alpha)p$ \\
+% $b^{new} = b^{old} + e$
+%
+% \end{frame}
+
+\begin{frame}
+  % \textbf{AND gate example} \\
+  %
+  % \[
+  % p_1 =
+  % \begin{bmatrix}
+  %   0 \\
+  %   0
+  % \end{bmatrix}
+  % , t_1 = 0
+  % \quad
+  % p2 =
+  % \begin{bmatrix}
+  %   0 \\
+  %   1
+  % \end{bmatrix}
+  % , t_2 = 0 \quad
+  % p_3 =
+  % \begin{bmatrix}
+  %   1 \\
+  %   0
+  % \end{bmatrix}
+  % , t_3 = 0
+  % \quad
+  % p4 =
+  % \begin{bmatrix}
+  %   1 \\
+  %   1
+  % \end{bmatrix}
+  % , t_4 = 1\]
+  Linera regression learn the rules \\
+
+  \textbf{Perceptron convergence theorem:} (link) \\
+  The perceptron learning rule will converge to a weight vector (not necessarily unique) that  gives  the  correct  response  for  all  training  patterns,  and it will do so in a finite number of steps. \\
+  Rosenblatt was so confident that the perceptron would lead to true AI, that in 1959 he remarked: \\
+  \textit{[The perceptron is] the embryo of an electronic computer that [the Navy] expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.}
+
+
+  Python script - draw/update boundaries while learning!!! \\
+  https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html \\
   1 neuron demo - gates, function approximation (y = 2x), house prices, etc \\
 (gradient descent)
 \end{frame}
@@ -157,7 +305,7 @@ AND, NOT, etc logical gates
 \begin{frame}
 
 \vspace*{.5cm}
-Marvin Minsky and Seymor Papert XOR problem
+\textbf{Marvin Minsky and Seymor Papert - XOR problem [1969]} \\
 Along with the double-PhD wielding Seymor Papert, Minksy wrote a book entitled Perceptrons that effectively killed the perceptron, ending embryonic idea of a neural net. They showed that the perceptron was incapable of learning the simple exclusive-or (XOR) function. Worse, they proved that it was theoretically impossible for it to learn such a function, no matter how long you let it train. Now this isn’t surprising to us, as the model implied by the perceptron is a linear one and the XOR function is nonlinear, but at the time this was enough to kill all research on neural nets \\
 
 python demo - XOR problem (boundaries cant converge) \\
