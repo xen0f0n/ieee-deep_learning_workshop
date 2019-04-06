@@ -438,7 +438,7 @@ At the time this was enough to kill all research on neural nets\\
 
     \hfill \break
     \begin{figure}
-      \includegraphics[width=.7\linewidth]{imgs/mlp_1b}
+      \includegraphics[width=.7\linewidth]{imgs/xor_sep-eps-converted-to.pdf}
     \end{figure}
   \end{multicols}
 \end{frame}
@@ -513,70 +513,95 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
-   Minimize some function, C(v) \\
-   it helps to imagine C as a function of just two variables, which we'll call v1 and v2
-
+   Minimize some function \\
+   
    \begin{multicols}{2}
-     This our function as a kind of a valley!!! \\
-     and imagine a ball rolling down the slope of the valley.
+     The derivative of the function shows us the way the function changes. \\
+     From Calculus is known that a function has a minimum (or maximum) value when its derivative at that point is zero.
 
      \begin{eqnarray}
-     \Delta C \approx \frac{\partial C}{\partial v_1} \Delta v_1 +
-     \frac{\partial C}{\partial v_2} \Delta v_2
+     f\left(x + \epsilon\right) \approx f\left(x\right) + \epsilon f'\left(x\right)
      \nonumber
      \end{eqnarray}
-
-     \begin{eqnarray}
-     \Delta C \approx \nabla C \cdot \Delta v
-     \label{eq:2.8}
-     \nonumber
-     \end{eqnarray}
+     
+     It is usefull for minimizing the function becasue it tells us how to change $x$ in order to make a small improvement in $y$
 
 
      \columnbreak
      \begin{figure}
-       \includegraphics[width=1\linewidth]{imgs/gd_1}
+       \includegraphics[width=1\linewidth]{imgs/gd_3}
      \end{figure}
   \end{multicols}
 \end{frame}
 
+
 \begin{frame}
+  \textbf{Critical points:}
   \begin{multicols}{2}
-    Choose $\Delta v$ so as to make $\Delta C$ negative: \\
-
-    $\Delta v = -\eta \nabla C$ \\
-    $\Delta C \approx - \eta \| \nabla C \| ^2$ \\
-    $\Delta C \leq 0$ i.e., $C$ will always decrease,
-
-    $ v \rightarrow v' = v - \eta \nabla C$
+    The cost functions may have many local minima that are not optimal. \\
+    This makes the optimization difficult, especially when the input is multidimensional.\\
+    Usually we settle for finding a value of $f$ which is low, but not necessarily minimal.
 
   \columnbreak
 
     \begin{figure}
-      \includegraphics[width=1\linewidth]{imgs/gd_2}
+      \includegraphics[width=1\linewidth]{imgs/minima.pdf}
     \end{figure}
   \end{multicols}
 \end{frame}
 
 \begin{frame}
+  \textbf{Multidimensional inputs:}
   \vspace{1cm}
   % \centering
   \begin{multicols}{2}
-  $y = 2x + 4 = wx + b$.\\
-  $ C(w, b) = \frac{1}{2n}\sum_x (t-\alpha)^2$
+    \begin{figure}
+      \includegraphics[width=1\linewidth]{imgs/gd_1}
+    \end{figure}
+   
 
-  $\frac{\partial C(w, b)}{\partial b} = \frac{1}{n}\sum(t - (wx + b))$ \\ \hfill \break
-  $\frac{\partial C(w, b)}{\partial w} = \frac{1}{n}\sum(t - (wx + b)) \cdot x$ \\ \hfill \break
+    \columnbreak
+ 
+  Usually we have multiple inputs and for that we use partial derivatives.\\ 
+  There is a partial derivative for each input variable. \\
+  The gradient of $f$ is the vector containing all the partial derivatives $\nabla_x f(x)$. Element $i$ of the gradient is the partial derivative of $f$ with respect to $x_i$. \\
+  In multiple dimesions, critical points are these where every element of the gradient is equal to zero.
+\end{multicols}
+\end{frame}
 
-  $b' = b - \eta \frac{\partial C(w, b)}{\partial b}$ \\
-  $w' = w - \eta \frac{\partial C(w, b)}{\partial w}$
-
-  \columnbreak
-
-  \begin{figure}
-    \includegraphics[width=1\linewidth]{imgs/gd_3}
-  \end{figure}
-  \end{multicols}
+\begin{frame}
+  \textbf{Gradient descent:}\\
+  To minimize $f$ we need to find the direction in which $f$ decreases the fastest.\\
+  We can find the direction using the directional derivative. \\
+  Moving in the direction of the negative gradient we can decrease $f$.
+  This method is known as gradient descent.\\
+  \begin{eqnarray}
+    x' = x - \epsilon \nabla_xf(x)
+    \nonumber
+  \end{eqnarray}
+  $\epsilon$ is the learning rate, a positive scalar determing the size of the step.\\
+  There are many ways to set the value of this parameter\\
+ 
+  
+\end{frame}
+  
+\begin{frame}
+  \vspace{.5cm}
+  \textbf{Stochastic Gradient Descent:}\\
+  Deep Learning needs large datasets which increase the computational cost of the gradient descent method.\\
+  For the cost function:
+  \begin{equation}
+    J(\theta) = \frac{1}{m}\sum_{i=1}^{m} L(x^{(i)}, y^{(i)},\theta)
+    \nonumber
+  \end{equation}
+  the gradient descent method needs to calculate the:
+  \begin{equation}
+    \nabla_\theta J(\theta) = \frac{1}{m}\sum_{i=1}^{m} \nabla_\theta L(x^{(i)}, y^{(i)},\theta)
+    \nonumber
+  \end{equation}
+  which is $O(m)$
+  However, the gradient is a prediction and because of that it can be an approximation using a small subset of the training dataset.\\
+  This is the Stochastic Gradient Descent methods which is an extension of the gradient descent.
 \end{frame}
 
 \begin{frame}
