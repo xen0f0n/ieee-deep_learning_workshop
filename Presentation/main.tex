@@ -72,6 +72,21 @@
 \setcounter{framenumber}{0}
 
 \begin{frame}
+  \vspace{.6cm}
+  \textbf{This workshop...} \\
+  theory \\
+  hands on \\
+  applications \\
+  thesis \\
+\end{frame}
+
+\begin{frame}
+  \vspace{.6cm}
+  \textbf{Goals} \\
+  solid under
+\end{frame}
+
+\begin{frame}
   % \vspace{.6cm}
   \begin{center}
   \makebox[\textwidth]{\includegraphics[width=.95\paperwidth]{imgs/news/1}}
@@ -844,26 +859,164 @@ At the time this was enough to kill all research on neural nets\\
   \end{figure}
 \end{frame}
 
-
 \begin{frame}
-  \vspace{1cm}
-  softmax, \\
-  NN as matrices, \\
+  \vspace{0.6cm}
 
-  MNIST example keras (dense) \\
+  \begin{figure}
+    \includegraphics[width=.85\linewidth]{imgs/softmax_1}
+  \end{figure}
 
-  overfitting / underfitting
+  \begin{multicols}{2}
+    \textbf{Softmax function} \\
+  $$ \sigma (z)_i = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}$$
+  \columnbreak
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/softmax_3}
+  \end{figure}
 
+  \end{multicols}
 \end{frame}
 
+
+
 \begin{frame}
-  CNN
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.8\linewidth]{imgs/softmax_2}
+  \end{figure}
+
+  \begin{multicols}{2}
+    \begin{figure}
+      \includegraphics[width=.9\linewidth]{imgs/categorical_1}
+    \end{figure}
+  \columnbreak
+    \begin{figure}
+      \includegraphics[width=.75\linewidth]{imgs/categorical_2}
+    \end{figure}
+
+  \end{multicols}
+
 \end{frame}
 
 \begin{frame}
   https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html \\
-  python demo - XOR problem (boundaries cant converge) \\
-  Linear model!!! meaning a straight line or a linear hyperplane
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{Recap} \\
+  \begin{itemize}
+    \item[--] Neural Networks are made up of neurons that have learnable weights and biases.
+    \item[--] Each neuron receives some inputs, performs a dot product and optionally follows it with a non-linearity.
+    \item[--] The whole network still expresses a single differentiable score function: from the raw input data on one end to class scores at the other - the network transforms the input through a series of hidden layers
+    \item[--] Each hidden layer is made up of a set of neurons, where each neuron is fully connected to all neurons in the previous layer, and where neurons in a single layer function completely independently and do not share any connections.
+    \item[--] The last fully-connected layer is called the “output layer” and in classification settings it represents the class scores.
+    \item[--] And networks have a loss function on the last layer.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  Other activation functions \\
+  tanh, relu, leaky relu
+\end{frame}
+
+\begin{frame}
+  \textbf{Convolutional Neural Networks (CNNs} \\ \hfill \break
+  \begin{itemize}
+    \item[--] Convolutional Neural Networks are very similar to ordinary Neural Networks
+    \item[--] BUT CNN architectures make the explicit assumption that the inputs are images
+    \item[--] vastly reduce the amount of parameters in the network.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \vspace{0.6cm}
+  \begin{multicols}{2}
+    Fully Connected neural nets can recognize images of handwritten digits.
+    \columnbreak
+    \begin{figure}
+      \includegraphics[width=.65\linewidth]{imgs/digits}
+    \end{figure}
+  \end{multicols}
+  \begin{figure}
+    \includegraphics[width=.75\linewidth]{imgs/mlp_4}
+  \end{figure}
+  \textbf{Input:} 28 x 28 pixels = 784 neurons \\
+  \textbf{Output:} 10 neurons (10 classes)
+\end{frame}
+
+\begin{frame}
+  images aka 2D aka spatial structure \\
+  BUT a FC model does not take into account this spatial structure of the images.
+
+  Convolutional neural networks use three basic ideas:\\
+  \begin{itemize}
+    \item[--] local receptive fields
+    \item[--] shared weights
+    \item[--] pooling
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \vspace{0.6cm}
+  \textbf{Local receptive fields} \\
+  \begin{multicols}{2}
+    Think of the input (image) as 28 x 28 square of neurons
+    \columnbreak
+    \begin{figure}
+      \includegraphics[width=.6\linewidth]{imgs/cnn/cnn_1}
+    \end{figure}
+  \end{multicols}
+  \begin{multicols}{2}
+    We connect the inputs pixels to a layer of hidden neurons. \\
+    Each neuron in the first hidden layer will be connected to a small region of the input neurons, e.g. a 5×5 region, corresponding to 25 input pixels.
+    \columnbreak
+    \begin{figure}
+      \includegraphics[width=.8\linewidth]{imgs/cnn/cnn_2}
+    \end{figure}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}
+    Each connection learns a weight. \\
+    The hidden neuron learns an overall bias. \\
+    We then slide the local receptive field across the entire input image. \\
+    For each local receptive field, there is a different hidden neuron in the first hidden layer.
+  \begin{figure}
+    \includegraphics[width=.6\linewidth]{imgs/cnn/cnn_3}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{0.6cm}
+  \textbf{Shared weights and biases} \\
+\end{frame}
+
+\begin{frame}
+  \vspace{0.6cm}
+  \textbf{Pooling} \\
+\end{frame}
+
+\begin{frame}
+  Our FC model works well on MNIST.  \\
+
+\end{frame}
+
+\begin{frame}
+  weights for images FC vs CNN
+\end{frame}
+
+\begin{frame}
+  Visualize filters - what a CNN learns! \\
+\end{frame}
+
+\begin{frame}
+  Autoencoders
+\end{frame}
+
+\begin{frame}
+  U-Net
 \end{frame}
 
 \begin{frame}
@@ -879,8 +1032,14 @@ Let there be Color! [\href{https://github.com/satoshiiizuka/siggraph2016_coloriz
 
 refs \\
 \href{https://www.sciencedaily.com/terms/artificial_intelligence.htm}{AI - Def.}
+\end{frame}
 
-
+\begin{frame}
+  \vspace{1cm}
+  ethics and dangers in Deep Learning \\
+  bias \\
+  fake news \\
+  deep fakes
 \end{frame}
 
 \end{document}
