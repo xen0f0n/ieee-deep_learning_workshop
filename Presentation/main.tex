@@ -568,22 +568,22 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 % MLP - XOR as a logic gates
-\begin{frame}
-  \textbf{As a logic gates}
-
-  \begin{multicols}{2}
-    \begin{figure}
-      \includegraphics[width=1.2\linewidth]{imgs/mlp_2}
-    \end{figure}
-
-    \columnbreak
-
-    \hfill \break
-    \begin{figure}
-      \includegraphics[width=.7\linewidth]{imgs/xor_nand_or}
-    \end{figure}
-  \end{multicols}
-\end{frame}
+% \begin{frame}
+%   \textbf{As a logic gates}
+%
+%   \begin{multicols}{2}
+%     \begin{figure}
+%       \includegraphics[width=1.2\linewidth]{imgs/mlp_2}
+%     \end{figure}
+%
+%     \columnbreak
+%
+%     \hfill \break
+%     \begin{figure}
+%       \includegraphics[width=.7\linewidth]{imgs/xor_nand_or}
+%     \end{figure}
+%   \end{multicols}
+% \end{frame}
 
 \begin{frame}
    A network of perceptrons can be used to simulate a circuit containing many NAND gates. And because NAND gates are universal for computation, it follows that perceptrons are also universal for computation. \\ \hfill \break
@@ -907,7 +907,7 @@ At the time this was enough to kill all research on neural nets\\
   \textbf{Recap} \\
   \begin{itemize}
     \item[--] Neural Networks are made up of neurons that have learnable weights and biases.
-    \item[--] Each neuron receives some inputs, performs a dot product and optionally follows it with a non-linearity.
+    \item[--] Each neuron receives some inputs, performs a dot product and usually follows it with a non-linearity.
     \item[--] The whole network still expresses a single differentiable score function: from the raw input data on one end to class scores at the other - the network transforms the input through a series of hidden layers
     \item[--] Each hidden layer is made up of a set of neurons, where each neuron is fully connected to all neurons in the previous layer, and where neurons in a single layer function completely independently and do not share any connections.
     \item[--] The last fully-connected layer is called the “output layer” and in classification settings it represents the class scores.
