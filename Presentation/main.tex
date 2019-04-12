@@ -73,17 +73,21 @@
 
 \begin{frame}
   \vspace{.6cm}
-  \textbf{This workshop...} \\
-  theory \\
-  hands on \\
-  applications \\
-  thesis \\
+  \textbf{This workshop...}
+  \begin{itemize}
+    \item[--] Introduction to Deep Learning - TOO MANY slides!
+    \item[--] Hands on with Keras
+    \item[--] Thesis mini-presentation
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \vspace{.6cm}
-  \textbf{Goals} \\
-  solid under
+  \textbf{Goals}
+  \begin{itemize}
+    \item[--] Deep Learning != Magic
+    \item[--] Deep Learning != Black box
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -287,6 +291,13 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}
+  \vspace{.6cm}
+    \begin{figure}
+      \includegraphics[width=1\linewidth]{imgs/ml_landscape}
+    \end{figure}
+\end{frame}
+
 % funny_1
 \begin{frame}
   \vspace{.6cm}
@@ -443,6 +454,19 @@
   \begin{figure}
     \includegraphics[width=.9\linewidth]{imgs/perceptron_ex_6}
   \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.2\linewidth, left]{imgs/hands_on_1}
+  \end{figure}
+  HANDS ON: Single Perceptron \\
+  -------------- \\
+  Run{\_}on{\_}GPU.ipynb \\
+  Single{\_}Perceptron{\_}OR{\_}Gate.ipynb \\
+  Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
+  dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
 \end{frame}
 
 \begin{frame}
@@ -754,6 +778,12 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
+    \begin{figure}
+      \includegraphics[width=1\linewidth]{imgs/hinton_2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
   \textbf{Gradient descent:}\\
   To minimize $f$ we need to find the direction in which $f$ decreases the fastest.\\
   We can find the direction using the directional derivative. \\
@@ -789,6 +819,7 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
+  \vspace{1cm}
   \textbf{So, how do we train a Multi Layer Perceptron?} \\
   \Large{$w_{1.1}^{new} = w_{1.1}^{old} - \eta \frac{\partial C}{\partial w_{1.1}}$}
   \begin{figure}
@@ -855,6 +886,13 @@ At the time this was enough to kill all research on neural nets\\
 \begin{frame}
   \vspace{1cm}
   \begin{figure}
+    \includegraphics[width=1\linewidth]{imgs/activation_functions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \begin{figure}
     \includegraphics[width=1\linewidth]{imgs/backprop_3}
   \end{figure}
 \end{frame}
@@ -903,6 +941,60 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=0.8\linewidth]{imgs/fashion_mnist}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=1\linewidth]{imgs/mnist_1}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.2\linewidth, left]{imgs/hands_on_1}
+  \end{figure}
+  HANDS ON: Fully Connected Networks \\
+  -------------- \\
+  2-Layer{\_}Sigmoid{\_}XOR.ipynb \\
+  Course 1 - Part 4 - Lesson 2 - Notebook{\_}No{\_}answers.ipynb \\
+  Course 1 - Part 4 - Lesson 4 - Notebook.ipynb (callbacks) \\
+  DL0101EN-3-2-Classification-with-Keras-py-v1.0.ipynb \\
+  DL0101EN-3-1-Regression-with-Keras-py-v1.0.ipynb
+  % Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
+  % dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
+\end{frame}
+
+\begin{frame}
+  \vspace{.6cm}
+  \textbf{What is cross entropy?} \\
+  \begin{figure}
+    \includegraphics[width=.8\linewidth, left]{imgs/cross_entropy_1}
+  \end{figure}
+  % Other loss functions \\
+  % binary cross entropy \\
+  % Categorical loss entropy \\
+  % Neirest Neighboor!!!
+\end{frame}
+
+\begin{frame}
+  \vspace{.6cm}
+  \textbf{What is cross entropy?} \\
+  \begin{figure}
+    \includegraphics[width=.8\linewidth, left]{imgs/cross_entropy_2}
+  \end{figure}
+  % Other loss functions \\
+  % binary cross entropy \\
+  % Categorical loss entropy \\
+  % Neirest Neighboor!!!
+\end{frame}
+
+\begin{frame}
   \vspace{1cm}
   \textbf{Recap} \\
   \begin{itemize}
@@ -914,11 +1006,6 @@ At the time this was enough to kill all research on neural nets\\
     \item[--] And networks have a loss function on the last layer.
   \end{itemize}
 
-\end{frame}
-
-\begin{frame}
-  Other activation functions \\
-  tanh, relu, leaky relu
 \end{frame}
 
 \begin{frame}
@@ -1107,13 +1194,6 @@ At the time this was enough to kill all research on neural nets\\
   \end{figure}
 \end{frame}
 
-\begin{frame}
-  Other loss functions \\
-  binary cross entropy \\
-  Categorical loss entropy \\
-  Neirest Neighboor!!!
-\end{frame}
-
 % https://engmrk.com/lenet-5-a-classic-cnn-architecture/
 \begin{frame}
   \vspace{0.6cm}
@@ -1122,6 +1202,20 @@ At the time this was enough to kill all research on neural nets\\
   \begin{figure}
     \includegraphics[width=.9\linewidth]{imgs/cnn/lenet}
   \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.2\linewidth, left]{imgs/hands_on_1}
+  \end{figure}
+  HANDS ON: CNN \\
+  -------------- \\
+  DL0101EN-4-1-Convolutional-Neural-Networks-with-Keras-py-v1.0.ipynb \\
+  Course 1 - Part 6 - Lesson 2 - Notebook.ipynb \\
+  Course 1 - Part 6 - Lesson 3 - Notebook.ipynb (basic conv) \\
+  % Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
+  % dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
 \end{frame}
 
 \begin{frame}
@@ -1196,6 +1290,21 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.2\linewidth, left]{imgs/hands_on_1}
+  \end{figure}
+  HANDS ON: LeNet - MNIST \\
+  -------------- \\
+  LeNet.ipynb
+  % DL0101EN-4-1-Convolutional-Neural-Networks-with-Keras-py-v1.0.ipynb \\
+  % Course 1 - Part 6 - Lesson 2 - Notebook.ipynb \\
+  % Course 1 - Part 6 - Lesson 3 - Notebook.ipynb (basic conv) \\
+  % Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
+  % dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
+\end{frame}
+
+\begin{frame}
   % https://www.learnopencv.com/understanding-alexnet/
   \vspace{0.6cm}
   \textbf{AlexNet} \\ \hfill \break
@@ -1213,44 +1322,44 @@ At the time this was enough to kill all research on neural nets\\
   \end{figure}
 \end{frame}
 
-\begin{frame}
-  % https://www.youtube.com/watch?v=AgkfIQ4IGaM&list=PLqinEaadXCHZ7QT2KtEvibg_oHsHcx47H
-  % https://www.youtube.com/watch?v=ghEmQSxT6tw
-  regularization  \\
-  batch norm \\
-\end{frame}
+% \begin{frame}
+%   % https://www.youtube.com/watch?v=AgkfIQ4IGaM&list=PLqinEaadXCHZ7QT2KtEvibg_oHsHcx47H
+%   % https://www.youtube.com/watch?v=ghEmQSxT6tw
+%   regularization  \\
+%   batch norm \\
+% \end{frame}
 
-\begin{frame}
-  Autoencoders
-\end{frame}
-
-\begin{frame}
-  U-Net
-\end{frame}
-
-\begin{frame}
-\href{https://news.psu.edu/story/429727/2016/10/04/research/artificial-intelligence-could-help-farmers-diagnose-crop-diseases}{Artificial intelligence could help farmers diagnose crop diseases} \\
+% \begin{frame}
+%   Autoencoders
+% \end{frame}
 %
-\href{https://www.youtube.com/watch?v=NlpS-DhayQA}{TensorFlow: an ML platform for solving impactful and challenging problems} \\
+% \begin{frame}
+%   U-Net
+% \end{frame}
 
-TensorFlow: an ML platform for solving impactful and challenging problems [\href{https://www.youtube.com/watch?v=NlpS-DhayQA}{link}] \\
+% \begin{frame}
+% \href{https://news.psu.edu/story/429727/2016/10/04/research/artificial-intelligence-could-help-farmers-diagnose-crop-diseases}{Artificial intelligence could help farmers diagnose crop diseases} \\
+% %
+% \href{https://www.youtube.com/watch?v=NlpS-DhayQA}{TensorFlow: an ML platform for solving impactful and challenging problems} \\
+%
+% TensorFlow: an ML platform for solving impactful and challenging problems [\href{https://www.youtube.com/watch?v=NlpS-DhayQA}{link}] \\
+%
+% Let there be Color! [\href{http://iizuka.cs.tsukuba.ac.jp/projects/colorization/extra.html}{link}] \\
+%
+% Let there be Color! [\href{https://github.com/satoshiiizuka/siggraph2016_colorization}{github}]
+%
+% refs \\
+% \href{https://www.sciencedaily.com/terms/artificial_intelligence.htm}{AI - Def.}
+% % https://engmrk.com/lenet-5-a-classic-cnn-architecture/
+% \end{frame}
 
-Let there be Color! [\href{http://iizuka.cs.tsukuba.ac.jp/projects/colorization/extra.html}{link}] \\
-
-Let there be Color! [\href{https://github.com/satoshiiizuka/siggraph2016_colorization}{github}]
-
-refs \\
-\href{https://www.sciencedaily.com/terms/artificial_intelligence.htm}{AI - Def.}
-% https://engmrk.com/lenet-5-a-classic-cnn-architecture/
-\end{frame}
-
-\begin{frame}
-  \vspace{1cm}
-  ``AI talent is very scarse into this world" -Andrew Ng
-  ethics and dangers in Deep Learning \\
-  bias \\
-  fake news \\
-  deep fakes
-\end{frame}
+% \begin{frame}
+%   \vspace{1cm}
+%   ``AI talent is very scarse into this world" -Andrew Ng
+%   ethics and dangers in Deep Learning \\
+%   bias \\
+%   fake news \\
+%   deep fakes
+% \end{frame}
 
 \end{document}
