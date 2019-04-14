@@ -1194,16 +1194,6 @@ At the time this was enough to kill all research on neural nets\\
   \end{figure}
 \end{frame}
 
-% https://engmrk.com/lenet-5-a-classic-cnn-architecture/
-\begin{frame}
-  \vspace{0.6cm}
-  \textbf{Le-Net 5 [1998]} \\
-  Yann LeCun, Leon Bottou, Yosuha Bengio and Patrick Haffner proposed a neural network architecture for handwritten and machine-printed character recognition in 1990’s which they called LeNet-5.
-  \begin{figure}
-    \includegraphics[width=.9\linewidth]{imgs/cnn/lenet}
-  \end{figure}
-\end{frame}
-
 \begin{frame}
   \vspace{.5cm}
   \begin{figure}
@@ -1214,8 +1204,22 @@ At the time this was enough to kill all research on neural nets\\
   DL0101EN-4-1-Convolutional-Neural-Networks-with-Keras-py-v1.0.ipynb \\
   Course 1 - Part 6 - Lesson 2 - Notebook.ipynb \\
   Course 1 - Part 6 - Lesson 3 - Notebook.ipynb (basic conv) \\
+
+  Exercise 3 - Question.ipynb \\
+  Course 1 - Part 8 - Lesson 2 - Notebook.ipynb \\
+  Course 1 - Part 8 - Lesson 3 - Notebook.ipynb \\
   % Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
   % dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
+\end{frame}
+
+% https://engmrk.com/lenet-5-a-classic-cnn-architecture/
+\begin{frame}
+  \vspace{0.6cm}
+  \textbf{Le-Net 5 [1998]} \\
+  Yann LeCun, Leon Bottou, Yosuha Bengio and Patrick Haffner proposed a neural network architecture for handwritten and machine-printed character recognition in 1990’s which they called LeNet-5.
+  \begin{figure}
+    \includegraphics[width=.9\linewidth]{imgs/cnn/lenet}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -1296,7 +1300,9 @@ At the time this was enough to kill all research on neural nets\\
   \end{figure}
   HANDS ON: LeNet - MNIST \\
   -------------- \\
-  LeNet.ipynb
+  LeNet.ipynb \\
+  Exercise 4-Question.ipynb \\
+  Exercise 5 - Question.ipynb
   % DL0101EN-4-1-Convolutional-Neural-Networks-with-Keras-py-v1.0.ipynb \\
   % Course 1 - Part 6 - Lesson 2 - Notebook.ipynb \\
   % Course 1 - Part 6 - Lesson 3 - Notebook.ipynb (basic conv) \\
@@ -1317,9 +1323,62 @@ At the time this was enough to kill all research on neural nets\\
 \end{frame}
 
 \begin{frame}
+  \vspace{1cm}
   \begin{figure}
     \includegraphics[width=.85\linewidth]{imgs/cnn/scholar_alexnet}
   \end{figure}
+\end{frame}
+
+\begin{frame}
+  \textbf{AlexNet Architecture} [\href{https://www.learnopencv.com/understanding-alexnet/}{link}]\\ \hfill \break
+  AlexNet was much larger than previous CNNs used for computer vision tasks ( e.g. Yann LeCun’s LeNet paper in 1998). It has 60 million parameters and 650,000 neurons and took five to six days to train on two GTX 580 3GB GPUs. Today there are much more complex CNNs that can run on faster GPUs very efficiently even on very large datasets. But back in 2012, this was huge!
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  \textbf{AlexNet Architecture}
+  \begin{figure}
+    \includegraphics[width=.85\linewidth]{imgs/AlexNet-1}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+  [\href{https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5}{link}]
+  \begin{figure}
+    \includegraphics[width=.85\linewidth]{imgs/we-need-to-go-deeper}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}
+%   AlexNet consists of 5 Convolutional Layers and 3 Fully Connected Layers. \\ \hfill \break
+%   \textbf{Overlapping Max Pooling} \\
+%   Max Pooling layers are usually used to downsample the width and height of the tensors, keeping the depth same. Overlapping Max Pool layers are similar to the Max Pool layers, except the adjacent windows over which the max is computed overlap each other. \\
+%   The authors used pooling windows of size 3×3 with a stride of 2 between the adjacent windows. This overlapping nature of pooling helped reduce the top-1 error rate by 0.4\% and top-5 error rate by 0.3\% respectively when compared to using non-overlapping pooling windows of size 2×2 with a stride of 2 that would give same output dimensions.
+% \end{frame}
+%
+% \begin{frame}
+%   AlexNet consists of 5 Convolutional Layers and 3 Fully Connected Layers. \\
+%   \textbf{ReLU Nonlinearity} \\
+%   An important feature of the AlexNet is the use of ReLU(Rectified Linear Unit) Nonlinearity. Tanh or sigmoid activation functions used to be the usual way to train a neural network model. AlexNet showed that using ReLU nonlinearity, deep CNNs could be trained much faster than using the saturating activation functions like tanh or sigmoid. The figure below from the paper shows that using ReLUs(solid curve), AlexNet could achieve a 25\% training error rate six times faster than an equivalent network using tanh(dotted curve). This was tested on the CIFAR-10 dataset.
+%   \begin{figure}
+%     \includegraphics[width=.65\linewidth]{imgs/relu_alex}
+%   \end{figure}
+% \end{frame}
+
+\begin{frame}
+  \vspace{.5cm}
+  \begin{figure}
+    \includegraphics[width=.2\linewidth, left]{imgs/hands_on_1}
+  \end{figure}
+  HANDS ON: AlexNet \\
+  -------------- \\
+
+  % DL0101EN-4-1-Convolutional-Neural-Networks-with-Keras-py-v1.0.ipynb \\
+  % Course 1 - Part 6 - Lesson 2 - Notebook.ipynb \\
+  % Course 1 - Part 6 - Lesson 3 - Notebook.ipynb (basic conv) \\
+  % Single{\_}Perceptron{\_}Linear{\_}Regression.ipynb \\
+  % dlaicourse-master/Course 1 - Part 2 - Lesson 2 - Notebook.ipynb
 \end{frame}
 
 % \begin{frame}
@@ -1361,5 +1420,43 @@ At the time this was enough to kill all research on neural nets\\
 %   fake news \\
 %   deep fakes
 % \end{frame}
+
+\begin{frame}
+  \vspace{1cm}
+
+  [\href{https://www.youtube.com/watch?v=gLoI9hAX9dw}{AI wrote this story}] \\
+
+  [\href{https://www.axios.com/ai-wrote-this-story-b71270f8-dffb-434d-a5a6-d7ef0d791b0a.html}{It’s Getting Harder to Spot a Deep Fake Video}] \\
+
+  [\href{https://www.cs.cmu.edu/~aayushb/Recycle-GAN/}{Recycle-GAN: Unsupervised Video Retargeting}] \\
+
+  [\href{https://bits.blogs.nytimes.com/2015/07/01/google-photos-mistakenly-labels-black-people-gorillas/}{Google Photos Mistakenly Labels Black People ‘Gorillas’}] \\
+
+  [\href{https://www.theverge.com/2016/3/24/11297050/tay-microsoft-chatbot-racist}{Twitter taught Microsoft’s AI chatbot to be a racist asshole in less than a day}] \\
+
+  [\href{https://qz.com/1340990/microsofts-politically-correct-chat-bot-is-even-worse-than-its-racist-one/}{Microsoft’s politically correct chatbot is even worse than its racist one}] \\
+
+  [\href{https://github.com/aayushbansal/Recycle-GAN}{Recycle-GAN}] \\
+
+  [\href{https://www.iflscience.com/technology/hackers-make-tesla-autopilot-swerve-into-oncoming-traffic-using-just-stickers/}{Hackers Make Tesla Autopilot Swerve Into Oncoming Traffic Using Just Stickers}] \\
+
+  % \begin{figure}
+  %   \includegraphics[width=.85\linewidth]{imgs/we-need-to-go-deeper}
+  % \end{figure}
+\end{frame}
+
+\begin{frame}
+  % \vspace{.6cm}
+  \begin{center}
+  \makebox[\textwidth]{\includegraphics[width=.95\paperwidth]{imgs/turing_award}}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  % \vspace{.6cm}
+  \begin{center}
+  \makebox[\textwidth]{\includegraphics[width=.95\paperwidth]{imgs/hinton_1}}
+  \end{center}
+\end{frame}
 
 \end{document}
